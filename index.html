@@ -17,6 +17,9 @@
     />
 
     <style>
+      .animate__backOutRight {
+        animation-duration: 1s;
+      }
       .monster-card[data-monster-type="cosmique"] {
         background: linear-gradient(to right, #6e48aa, #9d50bb);
       }
@@ -276,6 +279,7 @@
             :data-monster-type="monster.type"
             v-for="monster in sortedMonsters"
             :key="monster.id"
+            :class="{ animate__backOutRight : monster.isDeleted}"
           >
             <img
               :src="monster.img"
